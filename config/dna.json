@@ -1,0 +1,40 @@
+{
+  "gems": [
+    { "name" : "redis" },
+    { "name" : "resque" },
+    { "name" : "activesupport" },
+    { "name" : "twitter-stream" },
+    { "name" : "yajl-ruby" },
+    { "name" : "extlib" },
+    { "name" : "eventmachine" } 
+  ],
+
+  "packages" : [
+    { "name" : "redis-server" },
+    { "name" : "cassandra" },
+    { "name" : "libssl-dev" }    
+  ],
+  
+  "gitGems": [
+    {
+      "name" :   "flamingo",
+      "source" : "http://github.com/infochimps/flamingo.git"
+    },
+    {
+      "name"   : "wukong",
+      "source" : "http://github.com/mrflip/wukong.git"
+    },
+    { "name"   : "configliere",
+      "source" : "https://github.com/infochimps/configliere.git"
+    }
+  ],
+
+  "gitRubyLib" : {
+    "libdir"  : "/opt/infochimps/rubylib",
+    "bindir" : "/opt/infochimps/bin",
+    "gitdir" : "/opt/infochimps/git",
+    "user"   : "howech"
+   },
+
+  "recipes": ["packages","gems","gitGems"]
+}

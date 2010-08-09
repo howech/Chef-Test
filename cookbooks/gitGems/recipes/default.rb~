@@ -1,0 +1,20 @@
+
+directory node[:gitRubyLib][:libdir] do
+  recursive
+end
+
+directory node[:gitRubyLib][:bindir] do
+  recursive
+end
+
+directory node[:gitRbyLib][:gitdir] do
+  owner node[:gitRubyLib][:user]
+  recursive
+end
+
+node[:gitGems].each do |gitgem|
+  git "#{node[:gitRubyLib][:gitdir]}/#{gitgem[:name]}" do
+    repository gitgem[:source]
+    action :checkout
+  end
+end
